@@ -1,2 +1,7 @@
 # Projeto_MoveSport
-Projeto de monitoramento de corredores de lojas esportivas, usando sensores de presença. Os dados coletados estão conectado a um Banco de Dados e sendo visualizados em uma Dashboard atualizada em tempo real num site.
+Projeto de monitoramento de corredores de lojas esportivas:
+- Aplicação WEB utilizando as linguagens: HTML, CSS e JavaScript (Node.JS para a API e ChartJS para os graficos);
+- Dashboard atualizada em tempo real com conexão da API em JavaScript com API em C para sensor arduino de presença;
+- Armazenamento e consulta dos dados diretamente da nuvem da Azure, com  a utilização de SQL;
+- Modelagem das tabelas do banco de dados com MySQL Workbench;
+- Metodologia Ágil.
