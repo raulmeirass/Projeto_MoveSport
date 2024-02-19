@@ -1,0 +1,150 @@
+/* FUNDO */
+.banner {
+    height: 120vh;
+    background-image: url("imgs/fundo-site.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* display: flex; */
+
+}
+
+.banner .conteiner {
+    height: 100vh;
+    align-items: center;
+    display: flex;
+    justify-content:center;
+}
+
+/* Parte do login */
+.card_login {
+    height: max-content;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: -10vh;
+    width: 30vw;
+    border: 0.7vh black solid;
+    border-radius: 5vh;
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+    position: absolute;
+    padding: 2vh 2vw;
+    background: rgba(88, 88, 88, 0.151);
+
+    backdrop-filter: blur(2vh);
+    -webkit-backdrop-filter: blur(2vh);
+    transition: all 0.8s;
+    font-size: 3vh;
+}
+
+/* animação */
+.card_login:hover {
+    transform: scale(1);
+    box-shadow: 0.5vh 0.5vw 0.5vh 0.5vw #262626;
+
+}
+
+.card_login a {
+    color: white;
+}
+
+.card_login h2{
+    font-size: 4.5vh;
+}
+
+/* ERRO */
+.alerta_erro{
+    display: flex;
+    justify-content: center;
+    margin-top: 1vh;
+    align-items: center;
+    margin-left: 2vw;
+    
+}
+
+  
+  .card_erro {
+    display: none;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    width: 15vw;
+    /* position: fixed; */
+    border-radius: 2vh;
+    border: #e6005a 0.5vh solid;
+    padding: 1vh 1vw;
+    margin-right: 10%;
+  }
+  
+  .card_erro #mensagem_erro{
+    font-weight: 500;
+    font-size: 3vh;
+    text-align: center;
+  }
+  .loading-div {
+    width: 5vw;
+    margin: auto;
+    display: none;
+  }
+  
+  .loading-div img {
+    height: 5vh;
+    width: 5vw;
+  }
+
+/* INPUTS (login e cadastro) */
+input {
+    border: 0.5vh black solid;
+    border-radius: 3vh;
+    padding: 1vh 1vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    font-size: 2vh;
+}
+
+.card .botao a{
+    color: white;
+    text-decoration: none;
+}
+.card a {
+    color: black;
+
+}
+
+/* BOTOES (login e cadastro)*/
+.botao {
+    font-size: 2.5vh;
+    height: 7vh;
+    color: white;
+    text-align: center;
+    width: 10vw;
+    background-color: black;
+    border: 0.5vh black solid;
+    border-radius: 5vh;
+    cursor: pointer;
+    background: linear-gradient(to right, black, rgb(43, 41, 41));
+}
+
+.botao span {
+    position: relative;
+    transition: 0.5s;
+}
+
+.botao span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -5vh;
+    transition: 0.5s;
+}
+
+.botao:hover span {
+    padding-right: 3vh;
+}
+
+.botao:hover span:after {
+    opacity: 1;
+    right: 0;
+}

@@ -1,0 +1,432 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(228, 168, 56);
+}
+
+/* BARRA DE ROLAR */
+body::-webkit-scrollbar {
+    width: 1.5vw;
+}
+
+body::-webkit-scrollbar-track {
+    background: orange;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 1.5vw;
+    border: 0.5vh solid orange;
+}
+
+/* ============================ */
+
+/* HEADER */
+.header {
+    background-color: rgb(0, 0, 0);
+    height: 15vh;
+}
+
+.conteiner {
+    color: rgb(243, 166, 22);
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.conteiner h1 {
+    font-size: 6vh;
+}
+
+
+.conteiner ul {
+    display: flex;
+    width: 700px;
+    justify-content: space-evenly;
+    list-style: none;
+    margin-left: 150px;
+    font-size: 17px;
+}
+
+.conteiner ul a {
+    text-decoration: none;
+    color: rgb(243, 166, 22);
+    font-size: 4vh;
+}
+
+li a:hover {
+    opacity: .80;
+}
+
+.header .conteiner {
+    justify-content: center;
+    align-items: center;
+}
+
+.agora {
+    font-weight: 600;
+}
+
+/* FUNDO */
+.banner {
+    height: 120vh;
+    background-image: url("imgs/fundo-site.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+
+/* ============================================================ */
+
+/* MENU */
+.menu {
+    background-color: white;
+    width: 16vw;
+    border: 0.5vh solid;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu li {
+    color: black;
+    font-size: 4vh;
+    margin-top: 7vh;
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.menu li a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.lista-menu img {
+    height: 5vh;
+    margin-right: 0.5vw;
+    /* margin-bottom: -1vh; */
+}
+
+.menu ul {
+    padding: 2vw;
+    margin-top: -25vh;
+    margin-right: 1.5vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.foto {
+    width: 3.8vw;
+    padding: 0.5vw;
+    display: flex;
+    justify-content: center;
+    border-radius: 10vh;
+    margin-left: 2vw;
+    margin-left: 7.5vh;
+    margin-top: -8vh;
+
+}
+
+.foto img {
+    height: 8.5vh;
+
+}
+
+li a:hover {
+    opacity: .100;
+}
+
+ul h3 {
+    text-align: center;
+}
+
+/* ================================================ */
+
+/* DASHBOARD - Graficos */
+
+.conteiner-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75vw;
+
+}
+
+.conteiner-escolha {
+    display: flex;
+    flex-direction: row;
+    height: 20vh;
+    margin-top: 5vh;
+
+}
+
+.titulos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.titulos button {
+    margin-left: 1vw;
+    height: 8vh;
+    cursor: pointer;
+}
+
+.titulos button:hover {
+    opacity: .1000;    
+}
+
+
+.graph {
+    height: max-content;
+    background-color: white;
+    margin-top: 5vh;
+    width: max-content;
+    padding: 1vh 1vw;
+    border-radius: 5vh;
+
+}
+
+#canvas_grafico {
+    height: 50vh;
+
+    width: 50vw;
+}
+
+.banner .container_graf {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 8vh;
+}
+
+
+/* ======================================================== */
+
+/* PÁGINA DA DASHBOARD */
+
+/* Analytics - Corredores*/
+.conteiner-cima {
+    display: flex;
+    margin-top: 5vh;
+    flex-direction: column;
+
+}
+
+.conteiner-analytics {
+    display: flex;
+    flex-direction: row;
+    font-size: 2vh;
+    justify-content: center;
+    padding: 0.2vh 1vw;
+
+}
+
+.conteiner-analytics h4{
+    margin-top: 0;
+    font-size: 3vh;
+    margin-top: 0.5vh;
+}
+
+.conteiner-analytics h2{
+    font-weight: 800;
+}
+
+.card-vazio {
+    height: 18vh;
+    width: 9vw;
+    background-color: rgb(0, 0, 102);
+    border: 0.5vh solid black;
+    margin-left: 1vw;
+    text-align: center;
+    padding: 0.5vh 0.5vw;
+    color: white;
+    border-radius: 2vh;
+
+}
+
+.card-emergencia {
+    height: 18vh;
+    width: 9vw;
+    background-color: rgb(55, 94, 237);
+    border: 0.5vh solid black;
+    margin-left: 1vw;
+    text-align: center;
+    padding: 0.5vh 0.5vw;
+    color: white;
+    border-radius: 2vh;
+}
+
+.card-alerta {
+    height: 18vh;
+    width: 9vw;
+    background-color: rgb(94, 128, 172);
+    border: 0.5vh solid black;
+    margin-left: 1vw;
+    text-align: center;
+    padding: 0.5vh 0.5vw;
+    color: white;
+    border-radius: 2vh;
+}
+
+.card-ideal {
+    height: 18vh;
+    width: 9vw;
+    background-color: rgb(41, 230, 44);
+    border: 0.5vh solid black;
+    color: black;
+    font-style: bold;
+    margin-left: 1vw;
+    text-align: center;
+    padding: 0.5vh 0.5vw;
+    border-radius: 2vh;
+}
+
+.card-alerta-mais {
+    height: 18vh;
+    width: 9vw;
+    background-color: rgb(205, 199, 33);
+    border: 0.5vh solid black;
+    color: rgb(255, 255, 255);
+    margin-left: 1vw;
+    text-align: center;
+    padding: 0.5vh 0.5vw;
+    border-radius: 2vh;
+}
+
+.card-emergencia-mais {
+    height: 18vh;
+    width: 9vw;
+    background-color: rgb(255, 136, 0);
+    border: 0.5vh solid black;
+    margin-left: 1vw;
+    text-align: center;
+    padding: 0.5vh 0.5vw;
+    border-radius: 2vh;
+    color: rgb(255, 255, 255);
+}
+
+.card-critico {
+    height: 18vh;
+    width: 9vw;
+    background-color: rgb(128, 0, 0);
+    border: 0.5vh solid black;
+    margin-left: 1vw;
+    text-align: center;
+    padding: 0.5vh 0.5vw;
+    border-radius: 2vh;
+    color: rgb(255, 255, 255);
+}
+
+
+/* Caixas de cada corredor  Corredores */
+.conteiner-caixas {
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cards1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 5vh;
+}
+
+.cards2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 3vh;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0.5vh 0.5vw 0.5vh 0.5vw rgba(0, 0, 0, 0.35);
+}
+
+
+.card {
+    margin-top: 1vh;
+    background: rgba( 0, 0, 0, 0.35 );
+/* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+backdrop-filter: blur( 20px );
+-webkit-backdrop-filter: blur( 20px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+    height: 30vh;
+    width: 20vw;
+    border-radius: 3vh;
+    padding: 2vh 0.8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+}
+
+
+.card h1 {
+    margin-top: 0vh;
+    font-size: 3vh;
+}
+
+.card p {
+    margin-top: 0vh;
+    font-size: 4vh;
+}
+
+
+/* ALERTAS */
+.cor-alerta {
+    width: 5vw;
+    height: 35vh;
+    align-items: center;
+    border-radius: 1vh;
+    margin-top: 1vh;
+     
+  }
+
+  .perigo-critico{
+      background-color: rgb(128, 0, 0);
+  }
+
+  .alerta-emergencia{
+      background-color: rgb(255, 136, 0);
+  }
+
+  .alerta-alerta{
+      background-color: rgb(205, 199, 33);
+  }
+
+  .alerta-ideal{
+      background-color: rgb(41, 230, 44);
+  }
+
+  .alerta-alerta_vazio{
+    background-color:rgb(94, 128, 172);
+  }
+
+  .alerta-emergencia_vazio{
+      background-color: rgb(55, 94, 237);
+
+  }
+  .alerta-vazio{
+    background-color:rgb(0, 0, 102) ;
+
+}

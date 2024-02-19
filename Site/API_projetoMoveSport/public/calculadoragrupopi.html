@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Sport</title>
+    <link rel="stylesheet" href="css/styleCalculadora.css">
+    <link rel="stylesheet" href="css/styleFooter.css">
+    <link rel="stylesheet" href="css/styleHeader.css">
+
+</head>
+ 
+<body>
+    <div class="header">
+        <div class="conteiner">
+            <img src="css/imgs/M-logoMoveSports.png" alt="" class="logo">
+            <h1>Move Sport</h1>
+            <ul>
+                <li> <a href="index.html">Home</a></li>
+                <li><a href="sobrenosgrupopi.html">Sobre nós</a> </li>
+                <li class="agora"><a href="#"> Simulador financeiro</a></li>
+                <li><a href="suportegrupopi.html">Suporte</a> </li>
+                <li>|</li>
+                <li><a href="login.html">Login</a> </li>
+                <li><a href="cadastro.html">Cadastro</a> </li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="conteiner_calculadora">
+            <div class="card_calculadora">
+                <h2>Confira agora o quanto sua empresa poderá lucrar conosco!</h2>
+                Informe sua Renda mensal: 
+                <input type="text" id="ipt_rendaM" placeholder="renda mensal" autofocus>
+                Insira a quantidade de corredores que seu comércio possui: 
+                <input type="text" id="ipt_corredores" placeholder="quantidade de corredor">
+                Insira quantos corredores utilizarão nossos sensores:
+                <input type="text" id="ipt_sensor" placeholder="quantidade de sensores">
+                <button onclick="an()"> <span>Calcular</span></button>
+                <br>
+                <div id="msg"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="fotosrodape">
+            <img src="css/imgs/logo-movesports.png" alt="">
+            <img src="css/imgs/M-logoMoveSports.png" alt="">
+        </div>
+        <div class="escritarodape">
+            <div class="endereço">
+                <h2>Endereço</h2>
+                <h5>MOVE SPORT</h5>
+                <h5>Av. Francisco Matarazzo, 1705</h5>
+                <h5>Água Branca - São Paulo SP</h5>
+                <h5>CEP 05001-200</h5>
+            </div>
+
+            <div class="contato">
+                <h2>Contato</h2>
+                <h5>Telefone: 3003-1999</h5>
+                <h5>WhatsApp: +55 (11) 3003-1999</h5>
+                <h5>E-mail: movesport.sptech@gmail.com</h5>
+            </div>
+            <div class="redesSociais">
+                <h2>Siga-nos</h2>
+                <a href="https://www.facebook.com/Move-Sport-101276122576526"> <img src="css/imgs/icone-facebook.png" alt=""></a>
+                <a href="https://www.instagram.com/movesport_sptech/"><img src="css/imgs/icone-instagram.png" alt=""></a>
+                <a href="https://twitter.com/MoveSportss1"><img src="css/imgs/icone-twitter.png" alt="" height="50px"></a>
+                <a href="https://www.linkedin.com/in/move-sport-0a18b7238/"><img src="css/imgs/icone-linkedin.png" alt=""></a>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
+<script>
+    function an() {
+        var renda = Number(ipt_rendaM.value)
+        var corredores = Number(ipt_corredores.value)
+        var corredor_com_sensor = Number(ipt_sensor.value)
+        var renda_por_corredor = renda / corredores /*renda total da loja dividida pelos corredores*/
+        var renda_corredor_com_sensor = (corredor_com_sensor * renda_por_corredor) * 1.2 /*renda normal dos corredores com sensor*/
+        var corredor_sem_sensor = corredores - corredor_com_sensor /*Numero de corredores sem sensor*/
+        var renda_corredor_sem_sensor = renda_por_corredor * corredor_sem_sensor /*renda total dos corredores sem sensor*/
+        var corredor_total = renda_corredor_com_sensor + renda_corredor_sem_sensor /*renda total com os lucros aplicados*/
+        msg.innerHTML = `Atualmente seu Comércio gera em média R$ ${renda_por_corredor.toFixed(2)} em cada corredor.
+                        <br>Sem os nossos serviços você está perdendo cerca de 20% de lucro, ou seja R$ ${(renda * 0.2).toFixed(2)}
+                        <br><br> Com os nossos serviços, sua renda mensal será de R$ ${corredor_total.toFixed(2)}
+                        <br>Renda em 6 meses: R$ ${(corredor_total * 6).toFixed(2)}
+                        <br>Renda em 1 ano: R$ ${(corredor_total * 12).toFixed(2)}`
+
+                        // Pela quantidade de corredores que utilizarão os 
+                        // sensores somado com a quantidade de corredores que não utilizarão sensores,
+    }
+</script>

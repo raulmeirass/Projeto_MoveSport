@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Sport</title>
+    <link rel="stylesheet" href="css/styleDashboard.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="./js/funcoes.js"></script>
+    <link rel="stylesheet" href="css/styleFooter.css">
+</head>
+
+<body onload="validarSessao(), atualizacaoPeriodica()">
+    <div class="header">
+        <div class="conteiner">
+
+            <h1>Move Sport</h1>
+
+        </div>
+    </div>
+    <div class="banner">
+
+        <!-- MENU -->
+        <div class="menu">
+            <ul>
+                <div class="foto">
+                    <img src="https://static.thenounproject.com/png/1877951-200.png" alt="">
+                </div>
+
+                <h3>Olá, <span>Fernando</span>!</h3>
+
+                <div class="lista-menu">
+                    <li>  <a href="perfil.html" > <img src="https://static.thenounproject.com/png/1877951-200.png" alt=""> Perfil</a></li>
+
+                    <li class="agora"> <a href=""><img src="css/imgs/icone-loja.png" alt=""> Corredores</a></li>
+
+                    <li> <a href="graficos.html"><img src="css/imgs/icone-grafico.png" alt=""> Graficos </a> </li>
+                    <li> <img src="" alt=""> <a href="index.html">Sair</a></li>
+                </div>
+            </ul>
+        </div>
+
+
+        <!-- CARDS DO ANALYTIC -->
+        <div class="conteiner-cima">
+            <div class="conteiner-analytics">
+                <div class="card-vazio">
+                    <h4>VAZIO</h4>
+                    <h2>0 a 4 pessoas</h2>
+                </div>
+                <div class="card-emergencia">
+                    <h4>Emergencia</h4>
+                    <h2>5 a 9 pessoas</h2>
+                </div>
+                <div class="card-alerta">
+                    <h4>Alerta</h4>
+                    <h2>10 a 14 pessoas</h2>
+                </div>
+                <div class="card-ideal">
+                    <h4>IDEAL</h4>
+                    <h2>15 a 22 pessoas</h2>
+                </div>
+                <div class="card-alerta-mais">
+                    <h4>Alerta</h4>
+                    <h2>23 a 26 pessoas</h2>
+                </div>
+                <div class="card-emergencia-mais">
+                    <h4>Emergencia</h4>
+                    <h2>27 a 30 pessoas</h2>
+                </div>
+                <div class="card-critico">
+                    <h4>CRITICO</h4>
+                    <h2>Acima de 30 pessoas</h2>
+                </div>
+
+            </div>
+
+
+            <!-- CARDS DE CADA CORREDOR -->
+            <div class="cards1">
+                <div class="card">
+                    <h1>Corredor 1</h1>
+                    <div class="temperatura">
+                        <p id="temp_aquario_1"></p>
+                    </div>
+                    <div class="cor-alerta" id="card_1"></div>
+                </div>
+                <div class="card">
+                    <h1>Corredor 2</h1>
+                    <div class="temperatura">
+                        <p id="temp_aquario_2"></p>
+                    </div>
+                    <div class="cor-alerta" id="card_2"></div>
+
+                </div>
+            </div>
+
+            <div class="cards2">
+                <div class="card">
+                    <h1>Corredor 3</h1>
+                    <div class="temperatura">
+                        <p id="temp_aquario_3"></p>
+                    </div>
+                    <div class="cor-alerta" id="card_3"></div>
+                </div>
+                
+                <div class="card">
+                    <h1>Corredor 4</h1>
+                    <div class="temperatura">
+                        <p id="temp_aquario_4"></p>
+                    </div>
+                    <div class="cor-alerta" id="card_4"></div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- RODAPE -->
+    <footer>
+        <div class="fotosrodape">
+            <img src="css/imgs/logo-movesports.png" alt="">
+            <img src="css/imgs/M-logoMoveSports.png" alt="">
+        </div>
+        <div class="escritarodape">
+            <div class="endereço">
+                <h2>Endereço</h2>
+                <h5>MOVE SPORTS</h5>
+                <h5>Av. Francisco Matarazzo, 1705</h5>
+                <h5>Água Branca - São Paulo SP</h5>
+                <h5>CEP 05001-200</h5>
+            </div>
+
+            <div class="contato">
+                <h2>Contato</h2>
+                <h5>Telefone: 3003-1999</h5>
+                <h5>WhatsApp: +55 (11) 3003-1999</h5>
+                <h5>E-mail: movesport.sptech@gmail.com</h5>
+            </div>
+            <div class="redesSociais">
+                <h2>Siga-nos</h2>
+                <a href="https://www.facebook.com/Move-Sport-101276122576526"> <img src="css/imgs/icone-facebook.png"
+                        alt=""></a>
+                <a href="https://www.instagram.com/movesport_sptech/"><img src="css/imgs/icone-instagram.png"
+                        alt=""></a>
+                <a href="https://twitter.com/MoveSportss1"><img src="css/imgs/icone-twitter.png" alt=""
+                        height="50px"></a>
+                <a href="https://www.linkedin.com/in/move-sport-0a18b7238/"><img src="css/imgs/icone-linkedin.png"
+                        alt=""></a>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+
+
+
+
+<script>
+
+    function atualizacaoPeriodica() {
+        obterdados(1);
+        obterdados(2);
+        obterdados(3);
+        obterdados(4);
+
+        function sendData() {
+            var http = new XMLHttpRequest();
+            http.open('POST', 'http://localhost:3000/api/sendData', false);
+            http.send(null);
+        }
+
+        setInterval(() => {
+            sendData();
+        }, 2000);
+        setTimeout(atualizacaoPeriodica, 5000);
+    }
+
+    function obterdados(idAquario) {
+        fetch(`/medidas/tempo-real/${idAquario}`)
+            .then(resposta => {
+
+                if (resposta.ok) {
+                    resposta.json().then(resposta => {
+
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        var dados = {
+                            chave: resposta[0].chave,
+                        }
+
+                        alertar(resposta[0].chave, idAquario);
+                    });
+                } else {
+
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+    function alertar(chave, idAquario) {
+        var limites = {
+            critico: 30,
+            emergencia: 27,
+            alerta: 23,
+            ideal: 15,
+            alerta_vazio: 10,
+            emergencia_vazio: 5,
+            vazio: 0
+        };
+
+        var classe_chave = 'cor-alerta';
+
+        if (chave >= limites.critico) {
+            classe_chave = 'cor-alerta perigo-critico';
+            console.log("caiu no 1")
+        }
+        else if (chave < limites.critico && chave >= limites.emergencia) {
+            classe_chave = 'cor-alerta alerta-emergencia';
+            console.log("caiu no 2")
+        }
+        else if (chave < limites.emergencia && chave >= limites.alerta) {
+            classe_chave = 'cor-alerta alerta-alerta';
+            console.log("caiu no 3")
+        }
+        else if (chave < limites.alerta && chave >= limites.ideal) {
+            classe_chave = 'cor-alerta alerta-ideal';
+            console.log("caiu no 4")
+        }
+        else if (chave < limites.ideal && chave >= limites.alerta_vazio) {
+            classe_chave = 'cor-alerta alerta-alerta_vazio';
+            console.log("caiu no 6")
+        }
+        else if (chave < limites.alerta_vazio && chave >= limites.emergencia_vazio) {
+            classe_chave = 'cor-alerta alerta-emergencia_vazio';
+            console.log("caiu no 7")
+        }
+        else if (chave < limites.emergencia_vazio) {
+            classe_chave = 'cor-alerta alerta-vazio';
+            console.log("caiu no 8")
+        }
+
+        var card;
+
+        if (idAquario == 1) {
+            temp_aquario_1.innerHTML = chave + ` pessoas passaram pelo corredor 1 no último minuto`;
+            card = card_1
+        } else if (idAquario == 2) {
+            temp_aquario_2.innerHTML = chave + ` pessoas passaram pelo corredor 2 no último minuto`;
+            card = card_2
+        } else if (idAquario == 3) {
+            temp_aquario_3.innerHTML = chave + ` pessoas passaram pelo corredor 3 no último minuto`;
+            card = card_3
+        } else if (idAquario == 4) {
+            temp_aquario_4.innerHTML = chave + ` pessoas passaram pelo corredor 4 no último minuto`;
+            card = card_4
+        }
+
+        // alterando
+        card.className = classe_chave;
+
+    }
+
+</script>
+
+
+
+</html>

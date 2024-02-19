@@ -1,0 +1,78 @@
+/* FUNDO */
+.banner {
+    height: 120vh;
+    background-image: url("imgs/fundo-site.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* HOME */
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.conteiner-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -30vh;
+    
+}
+.welcome {
+    font-size: 10vh;
+    text-align: center;
+    color: black;
+    width: 70vw;
+    height: 7vh;
+
+
+}
+
+.welcome p {
+    background-color: orange;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7vh;
+    padding: 3vh 3vw;
+    margin: auto;
+    border: 0.5vh black solid;
+    border-radius: 3vh;
+    background: linear-gradient(to right, orange, rgb(228, 111, 8));
+
+}
+.conteiner-home2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20vh;
+    width: 90vw;
+}
+.home, .home2 {
+    color: rgb(255, 153, 0);
+    height: 35vh;
+    width: 30vw;
+    padding: 5vh;
+    text-align: center;
+    font-size: 6vh;
+    border: rgb(62, 62, 62) 1vh solid;
+    border-top-left-radius: 2vh;
+    border-bottom-right-radius: 2vh;
+    border-bottom-left-radius: 15vh;
+    border-top-right-radius: 2vh;
+    background: linear-gradient(to right, black, rgb(43, 41, 41));
+    transition: all 0.8s;
+}
+
+/* animação */
+.home:hover {
+    transform: scale(1.1);
+    box-shadow: 0.5vh 0.5vw 0.5vh 0.5vw rgba(0, 0, 0, 0.35);
+}
+
+/* animação */
+.home2:hover {
+    transform: scale(1.1);
+    box-shadow: 0.5vh 0.5vw 0.5vh 0.5vw rgba(0, 0, 0, 0.35);
+}

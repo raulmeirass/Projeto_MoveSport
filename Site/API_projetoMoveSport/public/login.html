@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Sport</title>
+    <link rel="stylesheet" href="css/styleLogin.css">
+    <link rel="stylesheet" href="css/styleFooter.css">
+    <link rel="stylesheet" href="css/styleHeader.css">
+
+    <script src="./js/funcoes.js"></script>
+</head>
+
+<body >
+    <div class="header">
+        <div class="conteiner">
+            <img src="css/imgs/M-logoMoveSports.png" alt="" class="logo">
+            <h1>Move Sport</h1>
+            <ul> 
+                <li> <a href="index.html">Home</a></li>
+                <li><a href="sobrenosgrupopi.html">Sobre nós</a> </li>
+                <li><a href="calculadoragrupopi.html"> Simulador financeiro</a></li>
+                <li><a href="suportegrupopi.html">Suporte</a> </li>
+                <li>|</li>
+                <li class="agora"><a href="login.html">Login</a> </li>
+                <li><a href="cadastro.html">Cadastro</a> </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="banner"> 
+        
+        <div class="conteiner">
+            <div class="card_login">
+                <h2>Entre na sua conta</h2>
+                Email
+                <input type="text" placeholder="insira seu email" id="email_input" autofocus>
+                Senha
+                <input type="password" placeholder="insira sua senha" id="senha_input">
+                <button onclick="entrar()" class="botao"> <span>Entrar</span> </button> 
+                <br>
+                Não está registrado? <a href="cadastro.html"> Junte-se a nós</a>
+                <br>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div class="alerta_erro">
+                    <div class="card_erro" id="cardErro">
+                        <span id="mensagem_erro"></span>
+                    </div>
+                </div>
+                <div id="div_erros_login">
+
+                </div>
+                <span id="mostrar"></span>
+            </div>
+        </div>
+    </div>
+    
+   <!-- RODAPÉ -->
+   <footer>
+    <div class="fotosrodape">
+        <img src="css/imgs/logo-movesports.png" alt="">
+        <img src="css/imgs/M-logoMoveSports.png" alt="">
+    </div>
+    <div class="escritarodape">
+        <div class="endereço">
+            <h2>Endereço</h2>
+            <h5>MOVE SPORT</h5>
+            <h5>Av. Francisco Matarazzo, 1705</h5>
+            <h5>Água Branca - São Paulo SP</h5>
+            <h5>CEP 05001-200</h5>
+        </div>
+
+        <div class="contato">
+            <h2>Contato</h2>
+            <h5>Telefone: 3003-1999</h5>
+            <h5>WhatsApp: +55 (11) 3003-1999</h5>
+            <h5>E-mail: movesport.sptech@gmail.com</h5>
+        </div>
+        <div class="redesSociais">
+            <h2>Siga-nos</h2>
+            <a href="https://www.facebook.com/Move-Sport-101276122576526"> <img src="css/imgs/icone-facebook.png" alt=""></a>
+            <a href="https://www.instagram.com/movesport_sptech/"><img src="css/imgs/icone-instagram.png" alt=""></a>
+            <a href="https://twitter.com/MoveSportss1"><img src="css/imgs/icone-twitter.png" alt="" height="50px"></a>
+            <a href="https://www.linkedin.com/in/move-sport-0a18b7238/"><img src="css/imgs/icone-linkedin.png" alt=""></a>
+        </div>
+    </div>
+
+</footer>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+ 
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "dashboard.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

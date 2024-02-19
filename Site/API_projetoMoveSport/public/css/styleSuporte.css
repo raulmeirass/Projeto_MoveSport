@@ -1,0 +1,73 @@
+
+/*Página de suporte*/
+
+.titlesuporte {
+    color: white;
+    font-weight: bold;
+    font-size: 4vh;
+}
+
+.caixinhasuporte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.link {
+    /* color: rgb(255, 136, 0); */
+    color: white;
+}
+
+.pergunta {
+    color: rgb(243, 166, 22);
+    cursor: pointer;
+    font-size: 2vh;
+}
+
+.resposta {
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+    font-size: 2vh;
+}
+
+.card-suporte {
+    height: max-content;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    margin-top: 5vh;
+    /* margin-bottom: 500px;
+        margin-left: 500px;
+        margin-right: 400px;  */
+    width: 40vw;
+    border: 0.5vh black solid;
+    border-radius: 5vh; 
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+    /* position: absolute;  */
+    background: rgba(88, 88, 88, 0.151);
+    padding: 1vh 1vw;
+    backdrop-filter: blur(2vh);
+    -webkit-backdrop-filter: blur(2vh);
+    transition: all 0.5s;
+    font-size: 2vh;
+}
+
+
+.banner-suporte {
+    height: 120vh;
+    background-image: url("imgs/fundo-site.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.caixinhasuporte .final{
+    color: white;
+    font-size: 2.5vh;
+}

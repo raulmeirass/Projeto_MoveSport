@@ -1,0 +1,42 @@
+/* RODAPÉ 
+    ===============================*/
+footer{
+    height: -10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+    .rodape {
+        height: 10vh;
+        justify-content: space-evenly;
+        font-size: 18px;
+    }
+    
+    .fotosrodape {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .fotosrodape img{
+        height: 12vh;
+    }
+    
+    .escritarodape {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 5vh;
+        align-items: baseline;
+    }
+    .escritarodape h2{
+        font-size: 4vh;
+    }
+    .escritarodape h5{
+        font-size: 2vh;
+    }
+    
+    .escritarodape h5 img {
+        margin-top: 2vh;
+    }
+    .redesSociais img{
+        height: 8vh;
+    }
